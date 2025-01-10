@@ -12,9 +12,9 @@ const socialLinks = [
 
 export default function SocialLinks() {
   return (
-    <div className="flex justify-center space-x-6 pb-8 bg-purple-900">
+    <div className="flex justify-center space-x-6 py-8 bg-gray-100 dark:bg-gray-800">
       {socialLinks.map((link) => (
-        <Link key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="text-pink-300 hover:text-pink-100 dark:text-pink-200 dark:hover:text-white transition-colors">
+        <Link key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-gray-700 dark:text-gray-100 dark:hover:text-gray-300 transition-colors">
           <span className="sr-only">{link.name}</span>
           <link.icon className="w-6 h-6" />
         </Link>

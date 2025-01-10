@@ -47,5 +47,43 @@ body {
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+@layer utilities {
+  .bg-grid-gray-100 {
+    background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px),
+      linear-gradient(to bottom, #f3f4f6 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  .bg-grid-gray-700 {
+    background-image: linear-gradient(to right, #374151 1px, transparent 1px),
+      linear-gradient(to bottom, #374151 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  .perspective {
+    perspective: 1000px;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-400 dark:from-primary-400 dark:to-primary-300;
+  }
+}
+
+/* Add smooth animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 

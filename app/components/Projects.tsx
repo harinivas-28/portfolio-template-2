@@ -31,24 +31,35 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-20 bg-white relative overflow-hidden dark:bg-gray-900">
-      <Parallax translateY={['-20%', '20%']} className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-tr from-purple-50 to-pink-100 dark:from-purple-900 dark:to-pink-800 opacity-50"></div>
-      </Parallax>
-      <div className="container mx-auto px-4 relative z-10">
-        <Parallax translateY={['-50px', '50px']}>
-          <h2 className="text-4xl font-bold mb-12 text-center text-blue-900 dark:text-blue-100">My Projects</h2>
+    <section id="projects" className="py-32 bg-gradient-to-b from-stone-50 to-white relative overflow-hidden dark:from-stone-900 dark:to-stone-800">
+      <div className="absolute inset-0 border-y border-stone-200/50 dark:border-stone-700/50"></div>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <Parallax translateY={['-40px', '40px']}>
+          <h2 className="text-6xl font-serif mb-24 text-center text-stone-800 dark:text-stone-100 tracking-tight">
+            Notable Works
+          </h2>
         </Parallax>
-        <div className="space-y-20">
+        <div className="space-y-32">
           {projects.map((project, index) => (
-            <Parallax key={project.id} translateX={index % 2 ? ['100px', '-100px'] : ['-100px', '100px']}>
-              <div className="flex flex-col md:flex-row items-center gap-8 bg-white dark:bg-blue-800 rounded-lg shadow-lg p-8">
-                <div className="w-full md:w-1/2">
-                  <Image src={project.image} alt={project.title} width={600} height={400} className="rounded-lg shadow-md" />
+            <Parallax 
+              key={project.id} 
+              translateX={index % 2 ? ['100px', '-100px'] : ['-100px', '100px']}
+              opacity={[0.5, 1]}
+              scale={[0.95, 1]}
+            >
+              <div className="group flex flex-col md:flex-row items-center gap-16 rounded-3xl bg-white/50 dark:bg-stone-800/50 p-8 lg:p-12 backdrop-blur-sm border border-stone-200/50 dark:border-stone-700/50 transition-all duration-500 hover:shadow-2xl hover:shadow-stone-200/20 dark:hover:shadow-stone-900/30">
+                <div className="w-full md:w-1/2 overflow-hidden rounded-2xl">
+                  <Image 
+                    src={project.image} 
+                    alt={project.title} 
+                    width={600} 
+                    height={400} 
+                    className="transform transition-transform duration-700 group-hover:scale-105" 
+                  />
                 </div>
-                <div className="w-full md:w-1/2">
-                  <h3 className="text-2xl font-semibold mb-4 text-blue-800 dark:text-blue-100">{project.title}</h3>
-                  <p className="text-blue-700 dark:text-blue-200">{project.description}</p>
+                <div className="w-full md:w-1/2 space-y-6">
+                  <h3 className="text-3xl font-serif text-stone-800 dark:text-stone-100">{project.title}</h3>
+                  <p className="text-lg text-stone-600 dark:text-stone-300 leading-relaxed">{project.description}</p>
                 </div>
               </div>
             </Parallax>
